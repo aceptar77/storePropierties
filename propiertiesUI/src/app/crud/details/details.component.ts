@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
 import { CrudService } from '../crud.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StoreProperty } from '../store-property';
@@ -53,7 +52,7 @@ export class DetailsComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
-          this.router.navigate(['/home']);
+          this.router.navigate(['/crud']);
         },
         error => {
           console.log(error);

@@ -1,6 +1,6 @@
 <div style="width: 500px; margin: auto;">
     <div *ngIf="currentPropierty" class="edit-form">
-      <h4>Detail</h4>
+      <h4>Detail {{currentPropierty.propertyName}}</h4>
       <form>
         <div class="form-group">
           <label for="title">Location</label>
@@ -22,11 +22,17 @@
             name="Owner"
           />
         </div>
-  
         <div class="form-group">
-          <label><strong>Status:</strong></label>
-  
-        </div>
+          <label for="Owner">Price</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Price"
+            [(ngModel)]="currentPropierty.propertyPrice"
+            name="Price"
+          />
+      </div>  
+
       </form>
    
       <button class="badge badge-danger mr-2" (click)="delete()">

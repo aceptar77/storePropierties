@@ -7,7 +7,7 @@ import { CreateComponent } from './crud/create/create.component';
 const routes: Routes = [
 { path: 'crud', redirectTo: 'crud/home', pathMatch: 'full'},
 { path: 'crud/home', component: HomeComponent },
-{ path: 'crud/details/:productId', component: DetailsComponent },
+{ path: 'crud/details/:propertyId', component: DetailsComponent },
 { path: 'crud/create', component: CreateComponent }];
 
 @NgModule({
