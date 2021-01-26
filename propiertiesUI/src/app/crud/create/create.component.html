@@ -1,0 +1,23 @@
+<div>
+    <h1>Create Product</h1>
+    <form [formGroup]="propiertyForm" (ngSubmit)="onSubmit()">
+        <div >
+            <label>Name</label>
+            <input type="text" formControlName="propertyName" class="form-control" maxlength="250">
+        </div>
+        <div>
+            <label>Owner</label>
+            <textarea class="form-control" formControlName="propertyOwner" maxlength="250"></textarea>
+        </div>
+        <div>
+            <label>Location</label>
+            <input type="text" formControlName="propertyLocation" maxlength="250" class="form-control">
+        </div>
+        <div>
+            <label>Price</label>
+            <input type="text" formControlName="propertyPrice" class="form-control" maxlength="20">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+       
+    </form>
+</div>
