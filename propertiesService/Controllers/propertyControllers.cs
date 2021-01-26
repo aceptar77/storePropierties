@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 namespace propertiesService.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class propertyController : ControllerBase
     {
         private propertyService _propertyService = new propertyService();
@@ -25,7 +25,7 @@ namespace propertiesService.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(storeProperty))]
         public ActionResult<storeProperty> GetpropertyId(long propertyId)
         {
-            return  _propertyService.storePropertyId(propertyId);
+            return _propertyService.storePropertyId(propertyId);
         }
 
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(storeProperty))]
@@ -48,7 +48,7 @@ namespace propertiesService.Controllers
         [HttpPost]
         public ActionResult<long> PostDeletePropierty(long propertyId)
         {
-           return _propertyService.deleteProperty(propertyId);
-          }
+            return _propertyService.deleteProperty(propertyId);
+        }
     }
 }

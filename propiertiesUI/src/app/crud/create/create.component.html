@@ -1,5 +1,5 @@
 <div>
-    <h1>Create Propierty</h1>
+    <h4>Create</h4>
     <form [formGroup]="propiertyForm" (ngSubmit)="onSubmit()">
         <div >
             <label>Name</label>
@@ -17,6 +17,7 @@
             <label>Price</label>
             <input type="text" formControlName="propertyPrice" class="form-control" maxlength="20">
         </div>
+        <p>&nbsp;</p>
         <button type="submit" class="btn btn-success">Submit</button>
        
     </form>

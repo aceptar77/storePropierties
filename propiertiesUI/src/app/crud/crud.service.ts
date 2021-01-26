@@ -11,7 +11,7 @@ import {StoreProperty} from '../crud/store-property';
   providedIn: 'root'
 })
 export class CrudService {
-  private apiServer = 'https://localhost:5001/api';
+  private apiServer = 'https://localhost:5001/api/property';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -26,8 +26,8 @@ getAll(): Observable<StoreProperty[]> {
   );
 }
 
-getId(): Observable<StoreProperty> {
-  return this.httpClient.get<StoreProperty>(this.apiServer + '/GetpropertyId/')
+getId(propertyId: any ): Observable<StoreProperty> {
+  return this.httpClient.get<StoreProperty>(this.apiServer + '/GetpropertyId/?propertyId='+ propertyId)
   .pipe(catchError(this.errorHandler)
   );
 }
@@ -47,7 +47,7 @@ update(storeProperty: StoreProperty): Observable<StoreProperty> {
 }
 
 delete(storeProperty: StoreProperty): Observable<StoreProperty> {
-  return this.httpClient.post<StoreProperty>(this.apiServer + '/PostDeletePropierty/', JSON.stringify(storeProperty), this.httpOptions)
+  return this.httpClient.post<StoreProperty>(this.apiServer + '/PostDeletePropierty/' , this.httpOptions)
   .pipe(
     catchError(this.errorHandler)
   );

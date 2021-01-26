@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
 import { CrudService } from '../crud.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StoreProperty } from '../store-property';
@@ -10,7 +10,7 @@ import { StoreProperty } from '../store-property';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  currentProduct!: StoreProperty;
+  currentPropierty!: StoreProperty;
   message = '';
 
   constructor(
@@ -20,35 +20,36 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.message = '';
-    this.getProduct(this.route.snapshot.paramMap.get('id'));
+    this.getPropierty(this.route.snapshot.paramMap.get('propertyId'));
+    console.log(this.route.snapshot.paramMap.get('propertyId'));
   }
 
-  getProduct(id: any): void {
-    this.crudService.getId()
+  getPropierty(propertyId: any): void {
+    this.crudService.getId(propertyId)
       .subscribe(
-        product => {
-          this.currentProduct = product;
-          console.log(product);
+        itemPropierty => {
+          this.currentPropierty = itemPropierty;
+          console.log(itemPropierty);
         },
         error => {
           console.log(error);
         });
   }
 
-  updateProduct(): void {
-    this.crudService.update(this.currentProduct)
+  update(): void {
+    this.crudService.update(this.currentPropierty)
       .subscribe(
         response => {
           console.log(response);
-          this.message = 'The product was updated!';
+          this.message = 'The Propierty; was updated!';
         },
         error => {
           console.log(error);
         });
   }
 
-  deleteProduct(): void {
-    this.crudService.delete(this.currentProduct)
+  delete(): void {
+    this.crudService.delete(this.currentPropierty)
       .subscribe(
         response => {
           console.log(response);

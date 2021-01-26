@@ -16,7 +16,7 @@
     <article *ngFor="let storeProperties of storeProperties">
       <span>{{storeProperties.propertyId}}</span>
       <span>{{storeProperties.propertyName}}</span>
-      <span> <button type="button" routerLink="crud/details">Detail</button></span>
+      <span> <button type="button" routerLink="crud/details/{{storeProperties.propertyId}}" class="btn btn-info">Detail</button></span>
          </article>
   </div>
   <router-outlet></router-outlet>
