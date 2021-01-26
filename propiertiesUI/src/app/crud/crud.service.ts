@@ -21,18 +21,36 @@ constructor(private httpClient: HttpClient) { }
 
 
 getAll(): Observable<StoreProperty[]> {
-  return this.httpClient.get<StoreProperty[]>(this.apiServer + '/property/')
+  return this.httpClient.get<StoreProperty[]>(this.apiServer + '/Getproperties/')
   .pipe(catchError(this.errorHandler)
   );
 }
+
+getId(): Observable<StoreProperty> {
+  return this.httpClient.get<StoreProperty>(this.apiServer + '/GetpropertyId/')
+  .pipe(catchError(this.errorHandler)
+  );
+}
+
 create(storeProperty: StoreProperty): Observable<StoreProperty> {
-  return this.httpClient.post<StoreProperty>(this.apiServer + '/property/', JSON.stringify(storeProperty), this.httpOptions)
+  return this.httpClient.post<StoreProperty>(this.apiServer + '/PostAddPropierty/', JSON.stringify(storeProperty), this.httpOptions)
   .pipe(
     catchError(this.errorHandler)
   );
 }
-create2(data: any): Observable<any> {
-  return this.httpClient.post(this.apiServer + '/property/', data);
+
+update(storeProperty: StoreProperty): Observable<StoreProperty> {
+  return this.httpClient.post<StoreProperty>(this.apiServer + '/PostUpdatePropierty/', JSON.stringify(storeProperty), this.httpOptions)
+  .pipe(
+    catchError(this.errorHandler)
+  );
+}
+
+delete(storeProperty: StoreProperty): Observable<StoreProperty> {
+  return this.httpClient.post<StoreProperty>(this.apiServer + '/PostDeletePropierty/', JSON.stringify(storeProperty), this.httpOptions)
+  .pipe(
+    catchError(this.errorHandler)
+  );
 }
 
   errorHandler(errorHandler: any): import('rxjs').OperatorFunction<StoreProperty, any> {

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/2f41cb40-8bef-45c8-a1f9-34f8ec40c60e/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/propiertiesUI",
+    "appService.deploySubpath": "propiertiesUI"
+}

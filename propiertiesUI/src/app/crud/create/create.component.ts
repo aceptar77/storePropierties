@@ -20,7 +20,6 @@ export class CreateComponent {
   ) { }
 
   onSubmit(): void {
-    // Process checkout data here
     this.crudService.create(this.propiertyForm.value).subscribe(
       (        response: any) => {
         console.log(response);
@@ -29,5 +28,4 @@ export class CreateComponent {
         console.log(error);
       });
   }
-
 }

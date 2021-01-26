@@ -6,18 +6,30 @@ namespace propertiesService.Service
 {
     public class propertyService
     {
-        private List<storeProperty> _rstoreProperty;
-
+        private List<storeProperty> _listRstoreProperty;
+        private storeProperty _rStoreProperty;
         public List<storeProperty> liststoreProperty()
         {
-            _rstoreProperty = new List<storeProperty>();
+            _listRstoreProperty = new List<storeProperty>();
             using (propertyContext context = new propertyContext())
             {
-                _rstoreProperty = context.storeProperties.ToList();
+                _listRstoreProperty = context.storeProperties.ToList();
 
             }
 
-            return _rstoreProperty;
+            return _listRstoreProperty;
+        }
+
+        public storeProperty storePropertyId(long propertyId)
+        {
+            _rStoreProperty = new storeProperty();
+            using (propertyContext context = new propertyContext())
+            {
+                _rStoreProperty = context.storeProperties.Where(n => n.propertyId == propertyId).FirstOrDefault();
+
+            }
+
+            return _rStoreProperty;
         }
 
         public int createProperty(storeProperty itemStoreProperty)
@@ -28,7 +40,29 @@ namespace propertiesService.Service
                 context.SaveChanges();
             }
 
-            return 0;
+            return 200;
+        }
+
+        public int updateProperty(storeProperty itemStoreProperty)
+        {
+            using (propertyContext context = new propertyContext())
+            {
+                context.storeProperties.Update(itemStoreProperty);
+                context.SaveChanges();
+            }
+
+            return 200;
+        }
+
+        public int deleteProperty(long propertyId)
+        {
+            using (propertyContext context = new propertyContext())
+            {
+                context.storeProperties.Remove(context.storeProperties.Where(n => n.propertyId == propertyId).FirstOrDefault());
+                context.SaveChanges();
+            }
+
+            return 200;
         }
     }
 }

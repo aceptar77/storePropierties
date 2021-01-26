@@ -1150,11 +1150,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\proyectos\\properties\\propertiesService\\propertiesService.csproj",
+      "projectUniqueName": "C:\\proyectos\\storePropierties\\propertiesService\\propertiesService.csproj",
       "projectName": "propertiesService",
-      "projectPath": "C:\\proyectos\\properties\\propertiesService\\propertiesService.csproj",
+      "projectPath": "C:\\proyectos\\storePropierties\\propertiesService\\propertiesService.csproj",
       "packagesPath": "C:\\Users\\equipo\\.nuget\\packages\\",
-      "outputPath": "C:\\proyectos\\properties\\propertiesService\\obj\\",
+      "outputPath": "C:\\proyectos\\storePropierties\\propertiesService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\equipo\\AppData\\Roaming\\NuGet\\NuGet.Config",

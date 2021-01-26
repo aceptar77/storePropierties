@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F09Dap6m2/Jn5pjb9m/hVHOxyroP6abpn5I8RS2FLdqpAIDebyILjuCa1RmPQi+060OkpNfCjsx8BBEeqMtN0Q==",
+  "dgSpecHash": "rSRxe5HelnJUi7XhSJGIVxidOO1u/F4ohVvJ+jqhbvTXnU8LLk46m2B5s9rikQMUZE3fKUxwClJ3jxmqFnXr4A==",
   "success": true,
-  "projectFilePath": "C:\\proyectos\\properties\\propertiesService\\propertiesService.csproj",
+  "projectFilePath": "C:\\proyectos\\storePropierties\\propertiesService\\propertiesService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\equipo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\equipo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
