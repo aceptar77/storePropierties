@@ -40,7 +40,7 @@ export class DetailsComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
-          this.message = 'The Propierty; was updated!';
+          this.router.navigate(['/crud']);
         },
         error => {
           console.log(error);
@@ -48,7 +48,7 @@ export class DetailsComponent implements OnInit {
   }
 
   delete(): void {
-    this.crudService.delete(this.currentPropierty)
+    this.crudService.delete(this.currentPropierty.propertyId)
       .subscribe(
         response => {
           console.log(response);

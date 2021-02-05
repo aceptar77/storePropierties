@@ -7,6 +7,7 @@ namespace propertiesService.Entities
         //Constructor sin parametros
         public propertyContext()
         {
+    
         }
         public propertyContext(DbContextOptions options) : base(options) { }
 
@@ -23,7 +24,9 @@ namespace propertiesService.Entities
             if (!optionsBuilder.IsConfigured)
             {
                    optionsBuilder.UseSqlite("Filename=MyDatabase.db");
+                     base.OnConfiguring(optionsBuilder);
             }
+            
         }
         public virtual DbSet<storeProperty>  storeProperties { get; set; }
 

@@ -11,7 +11,7 @@ import {StoreProperty} from '../crud/store-property';
   providedIn: 'root'
 })
 export class CrudService {
-  private apiServer = 'https://localhost:5001/api/property';
+  private apiServer = 'https://serpropierties.azurewebsites.net/api/property';
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -46,8 +46,8 @@ update(storeProperty: StoreProperty): Observable<StoreProperty> {
   );
 }
 
-delete(storeProperty: StoreProperty): Observable<StoreProperty> {
-  return this.httpClient.post<StoreProperty>(this.apiServer + '/PostDeletePropierty/' , this.httpOptions)
+delete(propertyId: any): Observable<StoreProperty> {
+  return this.httpClient.post<StoreProperty>(this.apiServer + '/PostDeletePropierty/?propertyId='+ propertyId , this.httpOptions)
   .pipe(
     catchError(this.errorHandler)
   );

@@ -13,7 +13,7 @@ namespace propertiesService.Service
             _listRstoreProperty = new List<storeProperty>();
             using (propertyContext context = new propertyContext())
             {
-                _listRstoreProperty = context.storeProperties.ToList();
+                    _listRstoreProperty = context.storeProperties.ToList();
 
             }
 

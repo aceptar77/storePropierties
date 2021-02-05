@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using propertiesService.Entities;
+using Microsoft.EntityFrameworkCore;
 namespace propertiesService
 {
     public class Startup
@@ -30,7 +31,8 @@ namespace propertiesService
 });
 
             services.AddControllers();
-            services.AddEntityFrameworkSqlite().AddDbContext<propertyContext>();
+            services.AddEntityFrameworkSqlite().AddDbContext<propertyContext>(options =>
+options.UseSqlite(Configuration.GetConnectionString("DefaultSQLiteConnection")));
 
         }
 
